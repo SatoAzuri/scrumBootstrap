@@ -1,0 +1,95 @@
+﻿@model ContactViewModel
+@{
+    ViewBag.Title = "Contact Us";
+}
+@section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+<div class="col-md-6 col-md-offset-3">
+    <div class="well">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div class="form-group">
+                <lable asp-for="Boss">Boss Name</lable>
+                <input type="text" asp-for="Boss" class="form-control" />
+                <span asp-validation-for="Boss" class="text-danger"></span>
+            </div>        
+
+            <div class="form-group">
+                <lable asp-for="Member1">Member1 ID</lable>
+                <input type="text" asp-for="Member1" class="form-control" />
+                <span asp-validation-for="Member1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Name1">Member1 Name</lable>
+                <input type="text" asp-for="Name1" class="form-control" />
+                <span asp-validation-for="Name1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Overtime1">Member1 Overtime</lable>
+                <input type="text" asp-for="Overtime1" class="form-control"/>
+                <span asp-validation-for="Overtime1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Member2">Member2 ID</lable>
+                <input type="text" asp-for="Member2" class="form-control"/>
+                <span asp-validation-for="Member2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Name2">Member2 Name</lable>
+                <input type="text" asp-for="Name2" class="form-control"/>
+                <span asp-validation-for="Name2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Overtime2">Member2 Overtime</lable>
+                <input type="text" asp-for="Overtime2" class="form-control"/>
+                <span asp-validation-for="Overtime2" class="text-danger"></span><br />
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Email">Email</lable>
+                <input type="email" asp-for="Email" class="form-control"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <lable asp-for="Date">Date</lable>
+                <input type="date" asp-for="Date" class="form-control"/>
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Reason">Reason</label>
+                <select asp-for="Reason" class="form-control">
+                    <option value="Constraction">Constraction</option>
+                    <option value="Weather">Weather</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span asp-validation-for="Reason" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Comment">Comment</label>
+                <textarea rows="4" asp-for="Comment" class="form-control"></textarea>
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group"> 
+                <button type="submit"  class="btn btn-primary btn-lg"><i class="fa fa-envelope"></i> Send Message</button>
+                <div class="text-success">@ViewBag.UserMessage</div>
+            </div>
+
+        </form>
+    </div>
+</div>
